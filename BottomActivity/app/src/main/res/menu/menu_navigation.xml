@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/prayerTimes"
+        android:title="@string/prayerTimes"
+        android:icon="@drawable/ic_baseline_access_time_24"/>
+    <item
+        android:id="@+id/chooseCity"
+        android:title="@string/city"
+        android:icon="@drawable/ic_baseline_location_on_24"/>
+
+    <item
+        android:id="@+id/calendar"
+        android:title="@string/calendar"
+        android:icon="@drawable/ic_baseline_calendar_month_24"/>
+
+</menu>
