@@ -9,8 +9,11 @@ Service is using protocol HTTP and uses port 8080.
 Service is using:
 
 APACHE CXF as a service framework.
+
 SQLITE version for persistance of passwords.
+
 SLF4J for logging.
+
 AES Encryption for encryption
 
 
