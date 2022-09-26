@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css" />
+    <script type="text/javascript" src="frontend.js"></script>
+</head>
+<body onload="init()">
+
+<div class="page">
+    <h1>Password Manager</h1>
+    <h2>Encrypted</h2>
+
+
+    <!-- tabs -->
+    <div class="pcss3t pcss3t-effect-scale pcss3t-theme-1">
+        <input type="radio" name="pcss3t" checked  id="tab1"class="tab-content-first">
+        <label for="tab1"><i class="create-pw"></i>Create Password</label>
+
+        <input type="radio" name="pcss3t" id="tab2" class="tab-content-2">
+        <label for="tab2"><i class="get-pw"></i>Get Password</label>
+
+        <input type="radio" name="pcss3t" onclick="document.getElementById('pw-list').innerHTML = '',
+                                                   getAllPasswords(this)" id="tab3" class="tab-content-3">
+        <label for="tab3"><i class="show-all-pws"></i>Show all Passwords</label>
+
+            <input type="radio" name="pcss3t" id="tab4" class="tab-content-last">
+        <label for="tab4"><i class="delete-pw"></i>Delete Password</label>
+
+        <ul>
+            <li class="tab-content tab-content-first typography">
+                <h1>Create Password</h1>
+                <table>
+                    <tr>
+                        <td>Password Title :</td>
+                        <td><input type="text" id="ckey" size="15"/>
+                    </tr>
+                    <tr>
+                        <td>Password :</td>
+                        <td>
+                            <input type="text" id="cvalue" size="15">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Create Password"
+                                   onclick="createPassword(),
+                                            document.getElementById('ckey').value = '',
+                                            document.getElementById('cvalue').value = ''"
+                                   style="background-color: MediumSeaGreen;
+
+                                    color:white"/>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table>
+                    <tr>
+                        <td>
+                            <output type="text" readonly="false" id="responseOutput" size="15"></output>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+
+            <li class="tab-content tab-content-2 typography">
+                <h1>Get Password</h1>
+                <table>
+                    <tr>
+                        <td>Enter Password ID :</td>
+                        <td><input type="text" id="id" size="10"/> <input type="button" value="Get Password"
+                                                                          onclick="getPassword()"/>
+                    </tr>
+                    <tr>
+                        <td>Date :</td>
+                        <td>
+                            <output type="text" readonly="false" id="jsdate" size="15"></output>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Password :</td>
+                        <td>
+                            <output type="text" readonly="false" id="jskey" size="15"></output>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Password Value :</td>
+                        <td>
+                            <output type="text" readonly="false" id="jsvalue" size="15"></output>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+
+            <li class="tab-content tab-content-3 typography">
+                <h1>Show all Passwords</h1>
+
+                    <input type="button" value="Get Password" onclick="document.getElementById('pw-list').innerHTML = '',
+                                                                       getAllPasswords()"/>
+
+
+                <div id="pw-list">
+
+                </div>
+
+            </li>
+
+            <li class="tab-content tab-content-last typography">
+                <div class="typography">
+                    <h1>Delete Password</h1>
+                    <table>
+                        <tr>
+                            <td>Password ID:</td>
+                            <td><input type="text" id="dkey" size="15"/>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" value="Delete Password" onclick="deletePassword(),
+                                                                                      document.getElementById('dkey').value = ''"/>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <output type="text" readonly="false" id="deleteResponseOutput" size="15"></output>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--/ tabs -->
+</div>
+</body>
+</html>
